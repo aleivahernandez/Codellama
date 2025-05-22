@@ -1,0 +1,6 @@
+streamlit==1.33.0
+pandas
+matplotlib
+pandasai==1.5.10
+transformers
+accelerate
