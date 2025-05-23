@@ -1,6 +1,6 @@
-streamlit==1.33.0
+streamlit
 pandas
 matplotlib
-pandasai==1.5.10
+pandasai
 transformers
 accelerate
