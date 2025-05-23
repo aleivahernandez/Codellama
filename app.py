@@ -4,29 +4,32 @@ import matplotlib.pyplot as plt
 from pandasai import SmartDataframe
 from pandasai.llm import HuggingFaceLLM
 
-# Inicializar modelo
-llm = HuggingFaceLLM(model="codellama/CodeLlama-7b-Instruct-hf")
-
-st.title("App análisis con base de datos fija")
-
-# Cargar CSV local dentro del repo (o ruta relativa)
+# --- Cargar base de datos principal ---
 df = pd.read_csv("data/datos.csv")
 
-st.subheader("Datos cargados:")
-st.dataframe(df.head())
+# --- Cargar diccionario de datos y construir metadata ---
+diccionario_df = pd.read_csv("data/diccionario.csv")
 
-metadata = {
-    "ventas": "Ventas mensuales en pesos",
-    "mes": "Mes del año",
-    "region": "Región geográfica"
-}
+# Crear el diccionario de metadata desde el CSV
+metadata = dict(zip(diccionario_df["Campo"], diccionario_df["Descripción"]))
 
+# --- Inicializar LLM y SmartDataframe ---
+llm = HuggingFaceLLM(model="codellama/CodeLlama-7b-Instruct-hf")
 sdf = SmartDataframe(df, config={"llm": llm, "metadata": metadata})
 
-# Entrada para preguntas en lenguaje natural
-pregunta = st.text_input("Escribe tu pregunta o comando:")
+# --- Interfaz Streamlit ---
+st.title("📊 Análisis automático con lenguaje natural")
+
+st.subheader("Base de datos cargada:")
+st.dataframe(df.head())
+
+st.subheader("Diccionario de datos:")
+st.dataframe(diccionario_df)
+
+pregunta = st.text_input("Haz tu pregunta sobre los datos:")
 
 if pregunta:
+    st.info(f"Procesando: {pregunta}")
     result = sdf.chat(pregunta)
     if isinstance(result, pd.DataFrame):
         st.dataframe(result)
