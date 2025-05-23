@@ -1,0 +1,24 @@
+Campo,Descripción,Formato
+Publication numbers,"Número de publicación de la solicitud; una misma solicitud, puede tener varios números de publicación.",TEXTO
+Standardized publication numbers,Número de publicación estandarizado.,TEXTO
+Publication kind codes,El tipo de informe que se esta publicando.,
+Publication numbers with kind code,"Numero de Publicación con kind Code; Ejemplo: US7654321B2, donde ""B2"" es el kind code, A: Generalmente indica solicitudes de patente publicadas
+ B: Suele referirse a patentes concedidas
+ C: A menudo usado para documentos corregidos o modificados
+ Los números (1, 2, etc.) después de las letras indican iteraciones o niveles",TEXTO
+Country code and status,País de la solicitud y estatus de la solicitud,TEXTO
+Publication dates,Fecha de publicación,FECHA
+Original document,Origen del documento,TEXTO
+Earliest priority date,Número de Pioridad (el más temprano),FECHA
+Title,Titulo de la invención,TEXTO
+Abstract,Resumen de la invención,TEXTO
+Inventors,Inventores,TEXTO
+Latest standardized assignees - inventors removed,Ultimo titular de la patente,TEXTO
+Assignee country,País del titular de la patente (puede ser empresa),TEXTO
+Assignee address,Dirección del titular de la patente,TEXTO
+Countries/authorities - Count,Cantidad de paises donde se ha inscrito la base,Numero
+Questel unique family ID (FAN),Número Único de Questel (motor de la base de datos),TEXTO
+Family publication details,Detalles del la familia,TEXTO
+EPO Family ID,"Número de familia (unico, base de datos de EPO)",TEXTO
+Application number,Número de solicitud (único en cada país),TEXTO
+Standardized application number,Número de solicitud estandarizado,TEXTO
